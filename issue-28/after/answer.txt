@@ -1,0 +1,16 @@
+=== 코딩할 때 듣는 노래 셔플해서 틀어줘 ===
+'코딩할 때 듣는 노래' 플레이리스트를 셔플해서 재생합니다. 현재 ATARASHII GAKKO!의 'Otonablue'가 재생 중입니다.
+
+=== 없는플레이리스트123 셔플해서 틀어줘 ===
+'없는플레이리스트123' 플레이리스트를 찾을 수 없습니다. 다른 이름으로 다시 말씀해 주세요.
+
+--- reasoning-toggle hunt (informational, not part of the two captures above) ---
+Ran 12 fresh-conversation attempts of the first prompt against the fixed build
+(commit b58608b, branch fix/28-agent-thought-leak) specifically looking for the
+"생각 과정 보기" (view reasoning) toggle that renders when the provider adapter
+sets ChatResponse.reasoning. gemma-4-26b-a4b-it only emits a `thought` part on
+some turns (not deterministic), and it did not do so in any of the 12 attempts
+(one attempt also hit a transient 429 free-tier rate limit, retried after the
+backoff and got a normal answer). This is reported honestly as "not observed in
+real gear" rather than staged — the 12 replies were themselves clean (no
+monologue leak), which is consistent with the fix.
