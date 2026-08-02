@@ -1,0 +1,82 @@
+{
+  "supported": true,
+  "toolCount": 13,
+  "hasSkipTool": true,
+  "names": [
+    "list_playlists",
+    "upload_from_youtube",
+    "play_playlist",
+    "shuffle_playlist",
+    "shuffle_and_play_playlist",
+    "set_playlist_repeat_all",
+    "set_playlist_repeat_one",
+    "set_playlist_repeat_off",
+    "move_song_in_playlist",
+    "set_song_repeat_count",
+    "play_song_in_playlist",
+    "skip_to_next_song",
+    "play_most_played_in_playlist"
+  ],
+  "log": [
+    {
+      "step": "play_playlist",
+      "result": {
+        "ok": true,
+        "playlistName": "코딩할 때 듣는 노래",
+        "songCount": 3,
+        "nowPlaying": "첫 번째 곡"
+      }
+    },
+    {
+      "step": "skip (normal)",
+      "result": {
+        "ok": true,
+        "nowPlaying": "두 번째 곡",
+        "artist": "아티스트 2"
+      }
+    },
+    {
+      "step": "set_playlist_repeat_one",
+      "result": {
+        "ok": true,
+        "playlistName": "코딩할 때 듣는 노래",
+        "repeatMode": "one",
+        "queueReplaced": false
+      }
+    },
+    {
+      "step": "★ skip (repeat=one)",
+      "result": {
+        "ok": true,
+        "nowPlaying": "세 번째 곡",
+        "artist": "아티스트 3"
+      }
+    },
+    {
+      "step": "set_song_repeat_count(5)",
+      "result": {
+        "ok": true,
+        "playlistName": "코딩할 때 듣는 노래",
+        "songTitle": "두 번째 곡",
+        "repeatCount": 5
+      }
+    },
+    {
+      "step": "play_song_in_playlist(두 번째 곡)",
+      "result": {
+        "ok": true,
+        "playlistName": "코딩할 때 듣는 노래",
+        "nowPlaying": "두 번째 곡",
+        "position": 2
+      }
+    },
+    {
+      "step": "★ skip (repeatCount=5 남음)",
+      "result": {
+        "ok": true,
+        "nowPlaying": "세 번째 곡",
+        "artist": "아티스트 3"
+      }
+    }
+  ]
+}

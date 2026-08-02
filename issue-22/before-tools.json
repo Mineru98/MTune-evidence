@@ -1,0 +1,19 @@
+{
+  "supported": true,
+  "count": 12,
+  "names": [
+    "list_playlists",
+    "upload_from_youtube",
+    "play_playlist",
+    "shuffle_playlist",
+    "shuffle_and_play_playlist",
+    "set_playlist_repeat_all",
+    "set_playlist_repeat_one",
+    "set_playlist_repeat_off",
+    "move_song_in_playlist",
+    "set_song_repeat_count",
+    "play_song_in_playlist",
+    "play_most_played_in_playlist"
+  ],
+  "inputSchemaType": "string"
+}
