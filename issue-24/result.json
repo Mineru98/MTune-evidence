@@ -1,0 +1,91 @@
+{
+  "tools": [
+    "list_playlists",
+    "upload_from_youtube",
+    "play_playlist",
+    "shuffle_playlist",
+    "shuffle_and_play_playlist",
+    "set_playlist_repeat_all",
+    "set_playlist_repeat_one",
+    "set_playlist_repeat_off",
+    "move_song_in_playlist",
+    "set_song_repeat_count",
+    "play_song_in_playlist",
+    "skip_to_next_song",
+    "skip_to_previous_song",
+    "play_most_played_in_playlist"
+  ],
+  "scenario": [
+    {
+      "label": "play_playlist",
+      "result": "{\"ok\":true,\"playlistName\":\"코딩할 때 듣는 노래\",\"songCount\":20,\"nowPlaying\":\"하나자와 카나 - 연애 서큘레이션\"}",
+      "elapsed": null,
+      "duration": null
+    },
+    {
+      "label": "skip_to_next_song",
+      "result": "{\"ok\":true,\"nowPlaying\":\"DAY6 \\\"Zombie\\\" M/V\"}",
+      "elapsed": null,
+      "duration": null
+    },
+    {
+      "label": "★ skip_to_previous_song (3초 초과 상태)",
+      "result": "{\"ok\":true,\"nowPlaying\":\"하나자와 카나 - 연애 서큘레이션\"}",
+      "elapsed": null,
+      "duration": null
+    },
+    {
+      "label": "skip_to_previous_song (첫 곡 + off)",
+      "result": "{\"ok\":false,\"error\":\"첫 번째 곡이라 돌아갈 이전 곡이 없습니다. 전체 반복을 켜면 마지막 곡으로 이어집니다.\"}",
+      "elapsed": null,
+      "duration": null
+    },
+    {
+      "label": "set_playlist_repeat_all",
+      "result": "{\"ok\":true,\"playlistName\":\"코딩할 때 듣는 노래\",\"repeatMode\":\"all\",\"queueReplaced\":false}",
+      "elapsed": null,
+      "duration": null
+    },
+    {
+      "label": "skip_to_previous_song (첫 곡 + all)",
+      "result": "{\"ok\":true,\"nowPlaying\":\"츄 - 고백\"}",
+      "elapsed": null,
+      "duration": null
+    },
+    {
+      "label": "set_playlist_repeat_one",
+      "result": "{\"ok\":true,\"playlistName\":\"코딩할 때 듣는 노래\",\"repeatMode\":\"one\",\"queueReplaced\":false}",
+      "elapsed": null,
+      "duration": null
+    },
+    {
+      "label": "★ skip_to_previous_song (repeat one)",
+      "result": "{\"ok\":true,\"nowPlaying\":\"유정석 - 질풍가도\"}",
+      "elapsed": null,
+      "duration": null
+    }
+  ],
+  "playlists": [
+    {
+      "name": "코딩할 때 듣는 노래",
+      "songCount": 20,
+      "totalDuration": 4707.147520833334
+    },
+    {
+      "name": "수업용",
+      "songCount": 13,
+      "totalDuration": 2695.95975
+    }
+  ],
+  "elapsedBeforeSkip": null,
+  "beforeSkip": {
+    "elapsed": null,
+    "duration": null,
+    "body": "MTune | 업로드 | 에이전트 | 플레이리스트 | 설정 | 검색 | ⌘ | K | 에이전트 | 모델과 API 키가 아직 없습니다 | 설정 화면에서 provider·모델·키를 등록하면 대화를 시작할 수 있습니다. | 말이나 문장으로 음악을 제어해 보세요. | 예) “코딩할 때 듣는 노래 셔플해서 틀어줘” | 음성 입력 | 전송 | DAY6 \"Zombie\" M/V | 0:39 | / | 3:36"
+  },
+  "afterSkip": {
+    "elapsed": null,
+    "duration": null,
+    "body": "MTune | 업로드 | 에이전트 | 플레이리스트 | 설정 | 검색 | ⌘ | K | 에이전트 | 모델과 API 키가 아직 없습니다 | 설정 화면에서 provider·모델·키를 등록하면 대화를 시작할 수 있습니다. | 말이나 문장으로 음악을 제어해 보세요. | 예) “코딩할 때 듣는 노래 셔플해서 틀어줘” | 음성 입력 | 전송 | 하나자와 카나 - 연애 서큘레이션 | 0:00 | / | 4:31"
+  }
+}
