@@ -1,0 +1,39 @@
+
+> mtune-monorepo@0.1.0 test:llm-connect /Users/mineru/Documents/Github/MTune-issue-25
+> bun scripts/llm-connect.test.ts
+
+
+── Groq (키: GROQ_API_KEY) ──────────────────────────
+  ok   listModels (261ms) — 15개 (예: allam-2-7b, canopylabs/orpheus-arabic-saudi, canopylabs/orpheus-v1-english)
+  모델: llama-3.1-8b-instant (목록에서 자동 선택)
+  ok   chat (210ms) — "ping"
+  ok   chat + tools (스키마 정제 확인) (359ms) — toolCalls=1 (play_playlist)
+
+── Cerebras (키: CEREBRAS_API_KEY) ──────────────────────────
+  ok   listModels (273ms) — 3개 (예: gemma-4-31b, gpt-oss-120b, zai-glm-4.7)
+  모델: gpt-oss-120b (목록에서 자동 선택)
+  ok   chat (349ms) — "ping"
+  ok   chat + tools (스키마 정제 확인) (330ms) — toolCalls=1 (play_playlist)
+
+── OpenRouter (키: OPENROUTER_API_KEY) ──────────────────────────
+  ok   listModels (168ms) — 17개 (예: cohere/north-mini-code:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free)
+  ok   openrouter 무료 전용 (1081ms) — 17개 전부 무료 (원본 337개 중 320개 제외)
+  모델: nvidia/nemotron-3-nano-30b-a3b:free (목록에서 자동 선택)
+  ok   chat (939ms) — "ping"
+  ok   chat + tools (스키마 정제 확인) (1889ms) — toolCalls=1 (play_playlist)
+
+── Google AI Studio (Gemini) (키: LLM_API_KEY) ──────────────────────────
+  ok   listModels (390ms) — 42개 (예: antigravity-preview-05-2026, deep-research-max-preview-04-2026, deep-research-preview-04-2026)
+  모델: gemma-4-26b-a4b-it (환경변수 지정)
+  ok   chat (2938ms) — "*   User input: \"ping 이라고만 답해.\" (Answer "
+  ok   chat + tools (스키마 정제 확인) (4881ms) — toolCalls=1 (play_playlist)
+
+요약
+| provider | 모델 | listModels | 무료 전용 | chat | 도구 호출 |
+|---|---|---|---|---|---|
+| Groq | `llama-3.1-8b-instant` | 통과 | — | 통과 | 통과 |
+| Cerebras | `gpt-oss-120b` | 통과 | — | 통과 | 통과 |
+| OpenRouter | `nvidia/nemotron-3-nano-30b-a3b:free` | 통과 | 통과 | 통과 | 통과 |
+| Google AI Studio (Gemini) | `gemma-4-26b-a4b-it` | 통과 | — | 통과 | 통과 |
+
+모든 단계 통과
